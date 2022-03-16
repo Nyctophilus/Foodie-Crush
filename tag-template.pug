@@ -1,0 +1,16 @@
+include global/mixins.pug
+
+
++startPage('home')
+
+
+body 
+	include layout/header.pug
+
+	main.page
+		.featured-recipes 
+			h4 Beef
+			+recipesList()
+		
+
+	+endPage()

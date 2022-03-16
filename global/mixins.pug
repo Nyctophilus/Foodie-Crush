@@ -1,0 +1,79 @@
+mixin links(one,two,three,four)
+	a(href=`${one}.html`) Beef (1) 
+	a(href=`${two}.html`) Breakfast (2) 
+	a(href=`${three}.html`) Carrots (3) 
+	a(href=`${four}.html`) Food (4) 
+
+
+mixin singleRecipe(src,name)
+	a.recipe(href=`single-recipe.html`)
+		img(loading="lazy" src=`${src}` class="img recipe-img" alt="")
+		h5 #{name}
+		p Prep : 15min | Cook : 5min
+
+
+mixin formRow(typeF)
+	.form-row 
+		label.form-label(html= `${typeF}`) your #{typeF} 
+		input.form-input(id= `${typeF}` type="text" name= `${typeF}`)
+
+
+mixin featuredRecipes()
+	section.featured-recipes 
+		h5.featured-title Loot At This Awesome souce! 
+		.recipes-list 
+			+singleRecipe('assets/recipes/recipe-1.webp','Carne Asada')
+			+singleRecipe('assets/recipes/recipe-2.webp','Greek Ribs')
+			+singleRecipe('assets/recipes/recipe-3.webp','Vegetable Soup')
+
+
+
+mixin singleInstruc(desc)
+	- for(let i =1; i<4; i++)
+		.single-instruction
+			header 
+				p step #{i}
+			p I'm baby mustache man braid fingerstache small batch venmo shoreditch. 
+
+
+
+mixin startPage(title)
+	doctype html
+	html(lang="en")
+		head
+			include metas.pug
+			title #{title}
+			include stylesInclude.pug
+
+
+
+
+mixin endPage()
+	include ../layout/footer.pug
+	script(src="js/app.js")
+
+
+
+mixin recipesContainer()
+	section.recipes-container
+		//- tag container
+		.tags-container 
+			h4 recipes
+			.tags-list 
+				+links('tag-template','tag-template','tag-template','tag-template')
+
+		+recipesList()
+
+mixin recipesList()
+	//- recipes list
+	.recipes-list
+		//- single recipe
+		+singleRecipe('assets/recipes/recipe-1.webp','Carne Asada')
+		+singleRecipe('assets/recipes/recipe-2.webp','Greek Ribs')
+		+singleRecipe('assets/recipes/recipe-3.webp','Vegetable Soup')
+		+singleRecipe('assets/recipes/recipe-4.webp','Banana Pancakes')
+
+mixin tagMaker(name,recipeNum)
+	a.tag(href="tag-template.html")
+		h5 #{name} 
+		p #{recipeNum} #{recipeNum>1? 'recipes': 'recipe'}

@@ -1,0 +1,22 @@
+include global/mixins.pug
+
++startPage('About Us')
+
+
+body 
+	include layout/header.pug
+
+
+	main.page 
+		//- section about
+		section.about-page 
+			article 
+				h2 I'm baby coloring book poke taxidermy
+				p Taxidermy forage glossier letterpress heirloom before they sold out you probably haven't heard of them banh mi biodiesel chia.
+				p Taiyaki tumblr flexitarian jean shorts brunch, aesthetic salvia retro.
+				a.btn(href="contact.html") contact
+			img(class="img about-img" alt="Person Pouring Salt in Bowl" src="assets/about.webp")
+
+		+featuredRecipes()
+
+	+endPage()

@@ -1,0 +1,55 @@
+include global/mixins.pug
+
+
++startPage('Single Recipe')
+
+
+body 
+	include layout/header.pug
+
+	main.page 
+		//- section single recipe
+		.recipe-page
+			section.recipe-hero 
+				img(src="assets/recipes/recipe-4.webp" class="img recipe-hero-img")
+				article.recipe-info 
+					h2 Banana Pancakes 
+					p Shabby chic humblebrag banh mi bushwick, banjo kale chips meggings. Cred selfies sartorial, cloud bread disrupt blue bottle seitan. Dreamcatcher tousled bitters, health goth vegan venmo whatever street art lyft shabby chic pitchfork beard. Drinking vinegar poke tbh, iPhone coloring book polaroid truffaut tousled ramps pug trust fund letterpress. Portland four loko austin chicharrones bitters single-origin coffee. Leggings letterpress occupy pour-over.
+					.recipe-icons
+						article
+							i(class="fas fa-clock")
+							h5 prep time 
+							p 30min.
+						article
+							i(class="fas fa-clock")
+							h5 cook time 
+							p 15min.
+						article
+							i(class="fas fa-user-friends")
+							h5 serving
+							p 6 servings
+					p.recipe-tags Tags : 
+						a( href="tag-template.html")
+						a(href="tag-template.html") breakfast
+						a(href="tag-template.html") pancakes
+						a(href="tag-template.html") food
+			section.recipe-content
+				article
+					h4 instructions
+					+singleInstruc()
+				article.second-column
+					div 
+						h4 ingredients
+						p.single-ingredient 1 1/2 cups dry pancake mix
+						p.single-ingredient 1/2 cup flax seed meal
+						p.single-ingredient 1 cup skim milk
+					div 
+						h4 tools
+						p.single-tool Hand Blender
+						p.single-tool Large Heavy Pot With Lid
+						p.single-tool Measuring Spoons
+						p.single-tool Measuring Cups
+
+
+
+	+endPage()

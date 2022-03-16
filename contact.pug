@@ -1,0 +1,28 @@
+include global/mixins.pug
+
++startPage('Contact')
+
+
+body 
+	include layout/header.pug
+
+	main.page 
+		//- section contact
+		section.contact-container
+			article.contact-info
+				h3 Want To Get In Touch?
+				p Four dollar toast biodiesel plaid salvia actually pickled banjo bespoke mlkshk intelligentsia edison bulb synth.
+				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi repellendus temporibus, earum esse vel dolorem ad totam enim amet est.
+				p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione, incidunt quod repellendus voluptate expedita vel!
+			article 
+				form(class="form contact-form")
+					+formRow('name')
+					+formRow('email')
+					.form-row 
+						label.form-label(html= "message") Message
+						textarea.form-textarea#message(name="message")
+						button(type="submit" class="btn btn-block") submit
+			+featuredRecipes()
+
+
+	+endPage()

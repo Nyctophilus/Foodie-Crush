@@ -1,0 +1,19 @@
+include global/mixins.pug
+
+
++startPage('home')
+
+
+body 
+	include layout/header.pug
+
+	main.page 
+		//- header
+		header.hero 
+			.hero-container 
+				.hero-text 
+					h1 Foodie Cruch
+					h4 no fluff, just recipes 
+		+recipesContainer()
+
+	+endPage()

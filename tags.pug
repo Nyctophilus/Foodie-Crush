@@ -1,0 +1,20 @@
+include global/mixins.pug
+
++startPage('Tags')
+
+
+body 
+	include layout/header.pug
+
+
+	main.page
+		section.tags-wrapper 
+			+tagMaker('beef', 1)
+			+tagMaker('breakfast', 2)
+			+tagMaker('carrots', 3)
+			+tagMaker('dinner', 4)
+			+tagMaker('cupcake', 1)
+
+
+
+	+endPage()

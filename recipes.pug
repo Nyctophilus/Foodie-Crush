@@ -1,0 +1,13 @@
+include global/mixins.pug
+
++startPage('Recipes')
+
+
+body 
+	include layout/header.pug
+
+
+	main.page
+		+recipesContainer()
+
+	+endPage()
